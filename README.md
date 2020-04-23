@@ -3,7 +3,7 @@ Notes on a workflow approach to Julia using Jupyter, Atom and Github to develop 
 
 ## The basic setup
 
-I like JupyterLab as a place to mess about with snippets of code, and also to control larger packages. There are alternatives. I can't get on with the IDEs lik Juno (too slow and rigid), or Sublime Text 3 (setup with Julia is too terrifying). 
+I like JupyterLab as a place to mess about with snippets of code, and also to control larger packages. There are alternatives. I can't get on with the IDEs lik Juno (too slow and rigid), or Sublime Text 3 (setup to work as an IDE is too terrifying). 
 
 But to write functions and modules, I need an editor. For me Atom strikes the right balance. I yearn for a bit more snappiness, so maybe one day I will Sublime, but removing all the Juno rubbish makes Atom fast enough for my purposes.
 

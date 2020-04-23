@@ -12,21 +12,21 @@ But to write functions and modules, I need an editor. For me Atom strikes the ri
 First, let's get the latest version of Julia. From here: https://julialang.org/
 
 Once you've installed the binaries for your platform, open the REPL (i.e., click on "Julia") and install IJulia. To do this, enter the following:
-'''
+```
 ] #Puts the REPL into package mode
 add iJulia
-'''
+```
 If you already have an installation of Anaconda on your machine, then this is enough to get a new Julia kernel as an option when you start up JupyterLab. If you do not, then follow the instructions here: https://github.com/JuliaLang/IJulia.jl to get it set up in a minimal installation.
 
 If at this point you have a previous kernel you want to get rid of (e.g., an old Julia version) then go to the Anaconda prompt and check all the kernels you have installed:
 
-'''
+```
 jupyter kernelspec list
-'''
+```
 And then get rid of thee ones no longer needed.
-'''
+```
 jupyter kernelspec uninstall <unwanted-kernel>
-'''
+```
   
 ## Setup instructions - Atom
 
@@ -43,9 +43,9 @@ This is already good enough for a good amount of experimentation, up to and incl
 Mess around using Jupyter to experiment with code, and run it in the browser. When you want to wrap it up in functions, do so and paste these into Atom to write some "commonly_called_functions.jl" files in the same directory as the Jupyter notebook.  
 
 All you then need to do is to to include a line:
-'''
+```
 include("commonly_called_functions.jl")
-'''
+```
 In your notebook, and then run this line every time you make a change to the code in your functions with Atom. The changes will show up in the notebook and you can experiment to see what happens.
 
 And this is fine, for a personal project. Properly annotated, it can even be robust and repeatable. You can also make your functions and notebooks into a .git directory and push it to Github if that way inclined.
@@ -62,21 +62,21 @@ Step 1: Create a skeleton project directory structure with a few required files 
 
 Then the PackageName.jl in the /src directory contains the main module, and -- if you are developing from Workflow 1 (as I usually am) then you can again put:
 
-'''
+```
 include("commonly_called_functions.jl")
-'''
+```
 ... in that main module, along with any import and export commands you want to be able to interact with your package.
 
 Step 2: Now open a notebook in the base directory of the PkgSkeleton tree, and install a new package which is pretty much essential: https://github.com/timholy/Revise.jl. Make sure this is included in the "include" lines of your notebook.
 
 Step 3: Ignore all the stuff about LOAD_PATHs in the workflow tips of Julia, or in the Pkg manual. Instead, just type this:
-'''
+```
 ] dev <Yourpackagename>
-'''
+```
 And now you refer to your development package in just the same way as any complete one. Most obviously, you can just type into the notebook:
-'''
+```
 include <Yourpackagename>
-'''
+```
 And all exported functions etc from your project's namespace.
   
 What's more, by using Revise.jl, then you can edit everything in your new package's code, and - so long as you remember to save your changes -- then they will push directly into your notebook. This allows you to work with the package just as if you were a third-party user.

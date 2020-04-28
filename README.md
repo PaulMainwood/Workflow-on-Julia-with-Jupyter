@@ -58,16 +58,16 @@ The big difference here is that we are going to use Julia's package manager to o
 
 I am not a coder, and find Pkg's documentation https://julialang.github.io/Pkg.jl/v1/index.html utterly incomprehensible. Project.toml and Manifest.toml and LOAD_PATH and JULIA_LOAD_PATH kept me going around in circles for ages. Here's the quickstart version that snapped everything into place for me.
 
-Step 1: Create a skeleton project directory structure with a few required files in it. All the documentation raves about PkgTemplates to do this. I spent a furstrating afternoon with it throwing error messages, and instead, I found that PkgSkeleton https://github.com/tpapp/PkgSkeleton.jl did precisely what I needed without a murmer.
+Step 1: Create a skeleton project directory structure with a few required files in it. All the documentation raves about PkgTemplates to do this. I found that PkgSkeleton https://github.com/tpapp/PkgSkeleton.jl also did precisely what I needed without a murmer.
 
-Then the PackageName.jl in the /src directory contains the main module, and -- if you are developing from Workflow 1 (as I usually am) then you can again put:
+Whichever you use, the PackageName.jl in the /src directory contains the main module, and -- if you are developing from Workflow 1 (as I usually am) then you can again put:
 
 ```
 include("commonly_called_functions.jl")
 ```
 ... in that main module, along with any import and export commands you want to be able to interact with your package.
 
-Step 2: Now open a notebook in the base directory of the PkgSkeleton tree, and install a new package which is pretty much essential: https://github.com/timholy/Revise.jl. Make sure this is included in the "include" lines of your notebook.
+Step 2: Now open a notebook, and install a new package which is pretty much essential: https://github.com/timholy/Revise.jl. Make sure this is included in the "include" lines of your notebook.
 
 Step 3: Ignore all the stuff about LOAD_PATHs in the workflow tips of Julia, or in the Pkg manual. Instead, just type this:
 ```

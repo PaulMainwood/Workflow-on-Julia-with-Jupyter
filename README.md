@@ -3,7 +3,7 @@ Notes on a workflow approach to Julia using Jupyter, Atom and Github to develop 
 
 ## The basic setup
 
-I like JupyterLab as a place to mess about with snippets of code, and also to control larger packages. There are alternatives. I can't get on with the IDEs lik Juno (too slow and rigid), or Sublime Text 3 (setup to work as an IDE is too terrifying). 
+I like JupyterLab as a place to mess about with snippets of code, and also to control larger packages. There are alternatives. I can't get on with the IDEs lik Juno (too slow and rigid), or Sublime Text 3 (setting it up to work as an IDE is too terrifying for me). 
 
 But to write functions and modules, I need an editor. For me Atom strikes the right balance. I yearn for a bit more snappiness, so maybe one day I will Sublime, but removing all the Juno rubbish makes Atom fast enough for my purposes.
 
@@ -79,4 +79,4 @@ include <Yourpackagename>
 ```
 And all exported functions etc from your project's namespace.
   
-What's more, by using Revise.jl, then you can edit everything in your new package's code, and - so long as you remember to save your changes -- then they will push directly into your notebook. This allows you to work with the package just as if you were a third-party user.
+What's more, by using Revise.jl, then you can edit everything in your new package's code, and - so long as you remember to save your changes - then they will push directly into your notebook. This allows you to work with the package just as if you were a third-party user.
